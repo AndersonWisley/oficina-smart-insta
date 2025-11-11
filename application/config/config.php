@@ -39,7 +39,7 @@ $config['app_subname'] = 'Sistema de Controle de Ordens de Serviço';
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://ctcentroautomotivo.online';
+$config['base_url'] = 'http://localhost:8000/';
 
 
 /*
@@ -153,7 +153,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = true;
+$config['composer_autoload'] = FCPATH . 'vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -395,10 +395,10 @@ $config['encryption_key'] = '40ad83e080dc2a7';
 | except for 'cookie_prefix' and 'cookie_httponly', which are ignored here.
 |
 */
-$config['sess_driver'] = 'database';
+$config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'app_session';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] = 'ci_sessions';
+$config['sess_save_path'] = sys_get_temp_dir();
 $config['sess_match_ip'] = false;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = false;
